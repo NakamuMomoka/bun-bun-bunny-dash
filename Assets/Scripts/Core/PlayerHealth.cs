@@ -33,4 +33,12 @@ public sealed class PlayerHealth : MonoBehaviour
         if (gameOverHandler != null)
             gameOverHandler.TriggerGameOver();
     }
+
+    /// <summary>最大HPアップ（現在HPも同分回復）。</summary>
+    public void ApplyMaxHpBonus(int bonus)
+    {
+        var b = Mathf.Max(1, bonus);
+        maxHp += b;
+        _currentHp += b;
+    }
 }

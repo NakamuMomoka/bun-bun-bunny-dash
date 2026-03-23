@@ -7,9 +7,16 @@ public sealed class PlayerShooter : MonoBehaviour
 {
     [SerializeField] private Bullet bulletPrefab;
     [SerializeField] private float fireInterval = 0.35f;
+    [SerializeField] private float minFireInterval = 0.08f;
     [SerializeField] private Vector2 spawnOffset = new Vector2(0f, 0.5f);
 
     private float _cooldown;
+
+    /// <summary>攻撃速度アップ（射撃間隔を掛け算で短縮）。</summary>
+    public void ApplyAttackSpeedBuff(float intervalMultiplier)
+    {
+        fireInterval = Mathf.Max(minFireInterval, fireInterval * intervalMultiplier);
+    }
 
     private void Update()
     {
