@@ -6,6 +6,7 @@ using UnityEngine;
 public sealed class BuffPairSpawner : MonoBehaviour
 {
     [SerializeField] private BuffChoicePickup pickupPrefab;
+    [SerializeField] private GameScore gameScore;
     [SerializeField] private float initialSpawnDelay = 4f;
     [SerializeField] private float spawnInterval = 10f;
     [SerializeField] private float buffSpawnTopY = 5.5f;
@@ -34,7 +35,7 @@ public sealed class BuffPairSpawner : MonoBehaviour
 
     private void SpawnPair()
     {
-        var existing = FindObjectsByType<BuffChoicePickup>(FindObjectsInactive.Exclude, FindObjectsSortMode.None);
+        var existing = FindObjectsByType<BuffChoicePickup>(FindObjectsInactive.Exclude);
         for (var i = 0; i < existing.Length; i++)
         {
             if (existing[i] != null)
@@ -55,12 +56,17 @@ public sealed class BuffPairSpawner : MonoBehaviour
         if (left == null || right == null)
             return;
 
+        var score = gameScore != null ? gameScore.CurrentScore : 0;
+        var mult = ScorePhaseScaling.GetFallSpeedMultiplier(score);
+
         var attackOnLeft = Random.value >= 0.5f;
         left.Initialize(
             attackOnLeft ? BuffChoicePickup.BuffKind.AttackSpeedUp : BuffChoicePickup.BuffKind.MaxHpUp,
-            right);
+            right,
+            mult);
         right.Initialize(
             attackOnLeft ? BuffChoicePickup.BuffKind.MaxHpUp : BuffChoicePickup.BuffKind.AttackSpeedUp,
-            left);
+            left,
+            mult);
     }
 }

@@ -1,4 +1,4 @@
-%YAML 1.1
+﻿%YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1 &9012345678901234501
 GameObject:
@@ -109,7 +109,8 @@ MonoBehaviour:
   buffKind: 0
   attackSpeedIntervalMultiplier: 0.85
   maxHpBonus: 1
-  fallSpeed: 2.5
+  buffFallSpeedRatioOfEnemy: 0.8571429
+  enemyReferenceBaseFall: 2.8
   destroyBottomY: -8
   spriteRenderer: {fileID: 9012345678901234503}
 --- !u!58 &9012345678901234505

@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6150808694999356144, guid: f1547251251edb543832cf6e6fb9def3, type: 3}
-  m_Color: {r: 1, g: 0.92, b: 0.2, a: 1}
+  m_Color: {r: 0.25, g: 0.65, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -106,8 +106,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02b62d0f9121d744db6e39639684e4d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
-  speed: 12
+  speed: 16
   maxLifetime: 3
+  damage: 1
+  hitRadius: 0.24
 --- !u!58 &544176744532655515
 CircleCollider2D:
   m_ObjectHideFlags: 0
