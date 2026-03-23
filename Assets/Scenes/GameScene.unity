@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 79056271}
   - component: {fileID: 79056270}
   - component: {fileID: 79056269}
+  - component: {fileID: 79056272}
   m_Layer: 0
   m_Name: GameRoot
   m_TagString: Untagged
@@ -152,7 +153,8 @@ MonoBehaviour:
   enemyPrefab: {fileID: 379069980486720469, guid: dba4e71dff536cd4fba8bcbb488677ee, type: 3}
   spawnInterval: 1.2
   spawnTopY: 5.5
-  spawnXRange: {x: -4, y: 4}
+  laneLeftX: -2
+  laneRightX: 2
 --- !u!114 &79056270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +168,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameOverHandler
   resultSceneName: ResultScene
+--- !u!114 &79056272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79056268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f5e4d3c2b1a0987654321fedcba0987, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BuffPairSpawner
+  pickupPrefab: {fileID: 9012345678901234504, guid: c3d4e5f6789012345678abcdef123456, type: 3}
+  initialSpawnDelay: 4
+  spawnInterval: 10
+  buffSpawnTopY: 5.5
+  laneLeftX: -2
+  laneRightX: 2
 --- !u!4 &79056271
 Transform:
   m_ObjectHideFlags: 0
