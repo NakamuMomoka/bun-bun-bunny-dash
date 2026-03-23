@@ -1,4 +1,4 @@
-%YAML 1.1
+﻿%YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1 &4604219469058112801
 GameObject:
@@ -106,8 +106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d208de29741b3ee4cb382dde406baceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  moveSpeed: 2.5
+  baseMoveSpeed: 2.8
   destroyBottomY: -8
+  labelOffset: {x: 0, y: 0.45}
 --- !u!61 &6263873265096250781
 BoxCollider2D:
   m_ObjectHideFlags: 0
