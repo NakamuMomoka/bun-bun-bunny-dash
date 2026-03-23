@@ -151,8 +151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemyPrefab: {fileID: 379069980486720469, guid: dba4e71dff536cd4fba8bcbb488677ee, type: 3}
   spawnInterval: 1.2
-  spawnX: 9
-  spawnYRange: {x: -3.5, y: 3.5}
+  spawnTopY: 5.5
+  spawnXRange: {x: -4, y: 4}
 --- !u!114 &79056270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,7 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerShooter
   bulletPrefab: {fileID: 3341978287405458441, guid: cca616f8489aa21409033453a1dfd63f, type: 3}
   fireInterval: 0.35
-  spawnOffset: {x: 0.5, y: 0}
+  spawnOffset: {x: 0, y: 0.5}
 --- !u!114 &1965507464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,7 +391,7 @@ Transform:
   m_GameObject: {fileID: 1965507462}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
