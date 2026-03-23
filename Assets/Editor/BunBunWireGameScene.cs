@@ -11,6 +11,7 @@ public static class BunBunWireGameScene
 {
     private const string MenuPath = "Tools/BunBun/Wire GameScene (Issue 3)";
     private const string GameScenePath = "Assets/Scenes/GameScene.unity";
+    private const string TitleScenePath = "Assets/Scenes/TitleScene.unity";
 
     [MenuItem(MenuPath)]
     public static void WireGameScene()
@@ -53,13 +54,34 @@ public static class BunBunWireGameScene
 
         EditorSceneManager.SaveScene(scene, GameScenePath);
 
-        var buildScenes = new List<EditorBuildSettingsScene>
-        {
-            new EditorBuildSettingsScene(GameScenePath, true)
-        };
-        EditorBuildSettings.scenes = buildScenes.ToArray();
+        EnsureGameSceneInBuildSettings();
 
         AssetDatabase.SaveAssets();
-        Debug.Log("[BunBun] Wired GameScene (Player movement + shooter), Bullet prefab, Build Settings = GameScene only.");
+        Debug.Log("[BunBun] Wired GameScene (Player movement + shooter), Bullet prefab. Build Settings: GameScene updated without removing other scenes.");
+    }
+
+    /// <summary>
+    /// GameScene のみ有効化・更新し、TitleScene / ResultScene など既存の Build Settings エントリは維持する。
+    /// </summary>
+    private static void EnsureGameSceneInBuildSettings()
+    {
+        var list = new List<EditorBuildSettingsScene>();
+        if (EditorBuildSettings.scenes != null)
+            list.AddRange(EditorBuildSettings.scenes);
+
+        var gameEntry = new EditorBuildSettingsScene(GameScenePath, true);
+        var index = list.FindIndex(s => s.path == GameScenePath);
+        if (index >= 0)
+            list[index] = gameEntry;
+        else
+        {
+            var afterTitle = list.FindIndex(s => s.path == TitleScenePath);
+            if (afterTitle >= 0)
+                list.Insert(afterTitle + 1, gameEntry);
+            else
+                list.Add(gameEntry);
+        }
+
+        EditorBuildSettings.scenes = list.ToArray();
     }
 }
