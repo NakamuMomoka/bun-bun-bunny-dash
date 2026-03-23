@@ -1,0 +1,16 @@
+---
+description: Unity-specific implementation rules
+globs: ["Assets/**/*.cs", "Assets/**/*.unity", "Assets/**/*.prefab"]
+alwaysApply: true
+---
+
+- Unity 2D プロジェクト前提で実装する
+- 新規 Script は `Assets/Scripts/` 配下の責務別フォルダに置く
+- MonoBehaviour は 1 クラス 1 責務にする
+- 公開フィールドより `[SerializeField] private` を優先する
+- Prefab や Scene 上で設定できる参照をハードコードしない
+- MVP段階では新規パッケージ追加を避ける
+- GameManager に責務を集中させすぎない
+- 変更後は Unity Console の warning / error を確認する
+- Script 作成後は、必要なら GameObject や Prefab へのアタッチまで行う
+- 既存 Scene の大規模な再構成は依頼なしで行わない

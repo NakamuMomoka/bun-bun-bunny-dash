@@ -1,0 +1,24 @@
+{
+  "project_name": "Bun Bun Bunny Dash",
+  "repository": "__OWNER__/bun-bun-bunny-dash",
+  "default_branch": "main",
+  "primary_language": "ja",
+  "issue_prefixes": [
+    "unity",
+    "gameplay",
+    "ui",
+    "art",
+    "audio",
+    "build",
+    "test"
+  ],
+  "development_flow": [
+    "issue",
+    "cursor",
+    "unity-check",
+    "test",
+    "pr",
+    "review",
+    "merge"
+  ]
+}

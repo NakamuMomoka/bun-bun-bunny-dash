@@ -1,0 +1,11 @@
+---
+description: Testing and verification rules
+globs: ["Assets/**/*.cs", ".github/workflows/**/*.yml"]
+alwaysApply: true
+---
+
+- コード変更後は Unity Console の error / warning を確認する
+- ロジック単体は EditMode テストを優先する
+- 挙動確認は PlayMode テストまたは手動確認手順を残す
+- テストが未実装なら、未実装であることを明示する
+- PR には確認手順を必ず書く

@@ -1,0 +1,13 @@
+---
+description: General coding rules
+globs: ["**/*"]
+alwaysApply: true
+---
+
+- 既存責務を尊重する
+- 命名変更の横展開を避ける
+- 依頼にないリファクタはしない
+- 未確認事項を断定しない
+- 最小スコープで実装する
+- 変更後は影響ファイル一覧を明示する
+- Unity プロジェクトでは Scene / Prefab / Script の責務分離を優先する

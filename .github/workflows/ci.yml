@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  repo-sanity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify required files
+        run: |
+          test -f AGENTS.md
+          test -f README.md
+          test -f .gitignore
+          test -f docs/mvp-spec.md
+          test -f docs/issue-backlog.md
+          test -f .cursor/rules/unity.mdc
+
+      - name: Placeholder
+        run: echo "Add Unity test/build workflow later"

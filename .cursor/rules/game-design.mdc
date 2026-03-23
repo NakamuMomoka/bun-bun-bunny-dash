@@ -1,0 +1,12 @@
+---
+description: Game design scope rules
+globs: ["Assets/**/*", "README.md", "AGENTS.md", "docs/**/*.md"]
+alwaysApply: true
+---
+
+- 現在の目標は Arrow a Row 風の超小型MVP
+- コア体験は「横移動」「自動攻撃」「敵撃破」「レベルアップ3択」
+- プレイヤーの見た目は 2Dドット絵美少女を目指す
+- 放置、転生、恒久強化、ガチャ、装備、ストーリーはMVP外
+- 美少女ドット絵は歓迎だが、見た目より先に操作とループを完成させる
+- まずはプレイ可能性を優先する
