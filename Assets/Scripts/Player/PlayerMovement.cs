@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
-/// 左右移動のみ（キーボード A/D または 矢印）。
+/// 左右移動のみ（A/D または左右矢印）。W/S や上下矢印は使わない。
 /// </summary>
 public sealed class PlayerMovement : MonoBehaviour
 {

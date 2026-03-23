@@ -9,7 +9,7 @@ public sealed class Bullet : MonoBehaviour
     [SerializeField] private float maxLifetime = 3f;
 
     private float _elapsed;
-    private Vector3 _direction = Vector3.right;
+    private Vector3 _direction = Vector3.up;
 
     public void Initialize(Vector3 direction)
     {
